@@ -1,0 +1,17 @@
+# Tiene sveglio il database dell'app Mazzer Contatti (Supabase gratuito si sospende dopo 7 giorni senza attività).
+name: Supabase keep-alive
+on:
+  schedule:
+    - cron: "17 6 */2 * *"   # ogni 2 giorni alle 06:17 UTC
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          KEY="sb_publishable_gUwDeJD8phbZOeaCvq5SWw_BZIaXswW"
+          URL="https://qrgkuhmgicmepyoomiij.supabase.co"
+          curl -fsS "$URL/rest/v1/contatti?select=id&limit=1" -H "apikey: $KEY" -H "Authorization: Bearer $KEY"
+          curl -fsS "$URL/auth/v1/health" -H "apikey: $KEY" -o /dev/null
+          echo " ok"
