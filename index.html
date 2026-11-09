@@ -28,8 +28,8 @@ a{color:inherit}
 img{display:block;max-width:100%}
 
 /* hero */
-.hero{position:relative;min-height:62vh;max-height:640px;display:flex;flex-direction:column;color:#fff;overflow:hidden;background:var(--navy)}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero{position:relative;min-height:min(560px,72vh);display:flex;flex-direction:column;color:#fff;overflow:hidden;background:var(--navy)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,26,42,.55) 0%,rgba(14,26,42,.05) 38%,rgba(14,26,42,.25) 60%,rgba(14,26,42,.92) 100%)}
 .top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) 18px 0}
 .top img{height:34px;width:auto}
@@ -46,17 +46,21 @@ img{display:block;max-width:100%}
 
 /* sections */
 main{max-width:760px;margin:-18px auto 0;padding:0 16px 24px;position:relative;z-index:3;display:grid;gap:14px}
-.tile{display:grid;grid-template-columns:118px 1fr;background:var(--card);border-radius:18px;overflow:hidden;text-decoration:none;box-shadow:0 1px 2px rgba(15,30,50,.06),0 8px 24px rgba(15,30,50,.07);transition:transform .15s ease,box-shadow .15s ease}
+.tile{display:flex;flex-direction:column;background:var(--card);border-radius:18px;overflow:hidden;text-decoration:none;box-shadow:0 1px 2px rgba(15,30,50,.06),0 8px 24px rgba(15,30,50,.07);transition:transform .15s ease,box-shadow .15s ease}
 .tile:active{transform:scale(.985)}
 @media (hover:hover){.tile:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(15,30,50,.08),0 14px 34px rgba(15,30,50,.12)}}
-.tile img{width:100%;height:100%;object-fit:cover;min-height:132px;background:#e9edf2}
-.tile .tx{padding:16px 16px 16px 18px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.tile img{width:100%;aspect-ratio:2/1;object-fit:cover;background:#e9edf2}
+.tile img.team{object-position:50% 80%}
+.tile .tx{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px}
 .num{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
 .tile h2{margin:0;font-size:1.18rem;font-weight:800;line-height:1.2}
 .tile p{margin:0;color:var(--muted);font-size:.9rem}
 .go{margin-top:8px;display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.9rem;color:var(--navy-2)}
 .go svg{width:16px;height:16px;transition:transform .15s}
 .tile:hover .go svg{transform:translateX(3px)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+@media (min-width:700px){.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}}
+.tiles{display:grid;gap:14px}
 .meta{font-weight:600;color:var(--steel);font-size:.78rem}
 
 .block{background:var(--card);border-radius:18px;padding:20px 18px;box-shadow:0 1px 2px rgba(15,30,50,.06),0 8px 24px rgba(15,30,50,.07)}
@@ -104,30 +108,27 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
 </header>
 
 <main>
+  <div class="tiles">
   <a class="tile" href="files/Officine-Mazzer-Brochure.pdf" target="_blank" rel="noopener">
-    <img src="img/team.jpg" alt="" loading="lazy">
+    <img class="team" src="img/team.jpg" alt="The Officine Mazzer team" loading="lazy">
     <div class="tx">
-      <span class="num">01</span>
-      <h2 data-t="b_h"></h2>
+            <h2 data-t="b_h"></h2>
       <p data-t="b_p"></p>
-      <span class="go"><span data-t="b_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      <span class="meta">PDF · 11 MB</span>
+      <span class="row"><span class="go"><span data-t="b_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="meta">PDF · 11 MB</span></span>
     </div>
   </a>
 
   <a class="tile" id="catLink" href="https://www.officinemazzer.it/catalogo-prodotti/" target="_blank" rel="noopener">
-    <img src="img/catalog.jpg" alt="" loading="lazy">
+    <img src="img/catalog.jpg" alt="Stainless steel bar stools on a yacht deck" loading="lazy">
     <div class="tx">
-      <span class="num">02</span>
-      <h2 data-t="c_h"></h2>
+            <h2 data-t="c_h"></h2>
       <p data-t="c_p"></p>
-      <span class="go"><span data-t="c_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      <span class="meta">officinemazzer.it</span>
+      <span class="row"><span class="go"><span data-t="c_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="meta">officinemazzer.it</span></span>
     </div>
   </a>
+  </div>
 
   <section class="block" aria-labelledby="ctH">
-    <span class="num">03</span>
     <h2 id="ctH" data-t="ct_h"></h2>
     <div class="people">
       <div class="person">
