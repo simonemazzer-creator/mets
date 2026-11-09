@@ -209,7 +209,6 @@ const ORDER = ['en','nl','de','fr','es','it'];
 function pick() {
   try { const s = localStorage.getItem('om_lang'); if (s && T[s]) return s; } catch (e) {}
   const q = new URLSearchParams(location.search).get('lang'); if (q && T[q]) return q;
-  for (const l of (navigator.languages || [navigator.language || 'en'])) { const k = String(l).slice(0,2).toLowerCase(); if (T[k]) return k; }
   return 'en';
 }
 function apply(l) {
