@@ -109,7 +109,7 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
 
 <main>
   <div class="tiles">
-  <a class="tile" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@751221a184365c0a80b6cbf4042f9853e7a45c4c/files/Officine-Mazzer-Brochure.pdf" target="_blank" rel="noopener">
+  <a class="tile" id="brLink" data-base="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@751221a184365c0a80b6cbf4042f9853e7a45c4c/" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@751221a184365c0a80b6cbf4042f9853e7a45c4c/files/Officine-Mazzer-Brochure.pdf" target="_blank" rel="noopener">
     <img class="team" src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@751221a184365c0a80b6cbf4042f9853e7a45c4c/img/team.jpg" alt="The Officine Mazzer team" loading="lazy">
     <div class="tx">
             <h2 data-t="b_h"></h2>
@@ -217,6 +217,7 @@ function apply(l) {
   document.querySelectorAll('[data-t]').forEach(el => { el.textContent = d[el.dataset.t]; });
   document.getElementById('langBtn').textContent = l.toUpperCase();
   document.getElementById('catLink').href = l === 'it' ? 'https://www.officinemazzer.it/catalogo-prodotti/' : 'https://www.officinemazzer.it/catalogo-prodotti/';
+  const br=document.getElementById('brLink'); if(br) br.href=br.dataset.base+(l==='it'?'files/Officine-Mazzer-Brochure-IT.pdf':'files/Officine-Mazzer-Brochure.pdf');
   renderList(l);
 }
 const btn = document.getElementById('langBtn'), list = document.getElementById('langList');
