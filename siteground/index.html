@@ -9,13 +9,13 @@
 <meta property="og:title" content="Officine Mazzer · METSTRADE 2026">
 <meta property="og:description" content="Stainless steel components for yachts and superyachts since 1985.">
 <meta property="og:image" content="img/hero.jpg">
-<link rel="icon" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/icon.png">
-<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/icon.png">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/icon.png">
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/icon.png">
 <style>
-@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/fonts/mulish-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/fonts/mulish-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/fonts/mulish-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/fonts/mulish-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/fonts/mulish-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/fonts/mulish-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/fonts/mulish-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Mulish";src:url(https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/fonts/mulish-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
 :root{
   --navy:#1f3550; --navy-2:#2b4466; --steel:#8e9aa8; --line:#e2e6ec;
   --bg:#f4f6f9; --card:#ffffff; --fg:#17263a; --muted:#5f6b7b; --accent:#3d6ea8;
@@ -47,6 +47,19 @@ img{display:block;max-width:100%}
 .play .pi{width:34px;height:34px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
 .play .pi svg{width:14px;height:14px;margin-left:2px}
 .play .dur{font-weight:600;opacity:.6}
+.book{position:fixed;inset:0;z-index:60;background:#1b2330;display:flex;flex-direction:column;color:#fff}
+.book[hidden]{display:none}
+.bbar{display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px}
+.bbar .bt{flex:1;font-weight:800;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdl{color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 12px;white-space:nowrap}
+.bclose{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.bstage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bpage{background:#fff;overflow:hidden}.bpage img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;-webkit-user-select:none;user-select:none}
+#flip{margin:0 auto}
+.bnav{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:18px;padding:10px 14px calc(14px + env(safe-area-inset-bottom,0px));font-weight:700;font-size:.9rem}
+.bnav button{width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:20px;font-weight:800;cursor:pointer}
+.bnav button:disabled{opacity:.3}
+.bload{position:absolute;inset:0;display:grid;place-items:center;font-size:.9rem;opacity:.7}
 .vmodal{position:fixed;inset:0;z-index:50;background:rgba(5,10,18,.97);display:flex;align-items:center;justify-content:center;padding:calc(56px + env(safe-area-inset-top,0px)) 0 24px}
 .vmodal[hidden]{display:none}
 .vmodal video{width:100%;max-width:1100px;max-height:100%;background:#000}
@@ -100,9 +113,9 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
 <body>
 
 <header class="hero">
-  <video class="bg" autoplay muted loop playsinline preload="auto" poster="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/video/poster.jpg" aria-hidden="true"><source src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/video/hero-loop.mp4" type="video/mp4"></video>
+  <video class="bg" autoplay muted loop playsinline preload="auto" poster="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/video/poster.jpg" aria-hidden="true"><source src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/video/hero-loop.mp4" type="video/mp4"></video>
   <div class="top">
-    <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/logo-white.svg" alt="Officine Mazzer">
+    <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/logo-white.svg" alt="Officine Mazzer">
     <div class="lang">
       <button type="button" id="langBtn" aria-haspopup="true" aria-expanded="false">EN</button>
       <ul id="langList" hidden></ul>
@@ -115,24 +128,33 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
     <button type="button" class="play" id="playBtn"><span class="pi"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l15 8-15 8z"/></svg></span><span data-t="v_go"></span><span class="dur">5:48</span></button>
   </div>
 </header>
+<div class="book" id="book" hidden>
+  <div class="bbar">
+    <span class="bt" data-t="b_h"></span>
+    <a class="bdl" id="bDl" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/files/Officine-Mazzer-Brochure.pdf" data-t="bk_dl"></a>
+    <button type="button" class="bclose" id="bClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="bstage" id="bStage"><div class="bload" id="bLoad">…</div><div id="flip"></div></div>
+  <div class="bnav"><button type="button" id="bPrev" aria-label="Previous">&#8249;</button><span id="bNum">1 / 20</span><button type="button" id="bNext" aria-label="Next">&#8250;</button></div>
+</div>
 <div class="vmodal" id="vModal" hidden>
   <button type="button" class="vclose" id="vClose" aria-label="Close">&times;</button>
-  <video id="vFull" controls playsinline preload="none" poster="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/video/poster.jpg" data-src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/video/officine-mazzer-video.mp4"></video>
+  <video id="vFull" controls playsinline preload="none" poster="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/video/poster.jpg" data-src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/video/officine-mazzer-video.mp4"></video>
 </div>
 
 <main>
   <div class="tiles">
-  <a class="tile" id="brLink" data-base="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/files/Officine-Mazzer-Brochure.pdf">
-    <img class="team" src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/team.jpg" alt="The Officine Mazzer team" loading="lazy">
+  <a class="tile" id="brLink" data-base="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/files/Officine-Mazzer-Brochure.pdf">
+    <img class="team" src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/team.jpg" alt="The Officine Mazzer team" loading="lazy">
     <div class="tx">
             <h2 data-t="b_h"></h2>
       <p data-t="b_p"></p>
-      <span class="row"><span class="go"><span data-t="b_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="meta">PDF · 6.0 MB</span></span>
+      <span class="row"><span class="go"><span data-t="b_go"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="meta">20 pp</span></span>
     </div>
   </a>
 
   <a class="tile" id="catLink" href="https://www.officinemazzer.it/catalogo-prodotti/">
-    <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/catalog.jpg" alt="Stainless steel articulated hinge and flush latch" loading="lazy">
+    <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/catalog.jpg" alt="Stainless steel articulated hinge and flush latch" loading="lazy">
     <div class="tx">
             <h2 data-t="c_h"></h2>
       <p data-t="c_p"></p>
@@ -152,7 +174,7 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
           <a href="https://wa.me/393470071950" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
           <a href="mailto:daniele@officinemazzer.it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</a>
         </div>
-        <a class="save" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/files/Daniele_Mazzer.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-t="save"></span></a>
+        <a class="save" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/files/Daniele_Mazzer.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-t="save"></span></a>
       </div>
       <div class="person">
         <div class="nm">Simone Mazzer</div>
@@ -162,7 +184,7 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
           <a href="https://wa.me/393482715143" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5 0a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
           <a href="mailto:simone@officinemazzer.it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</a>
         </div>
-        <a class="save" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/files/Simone_Mazzer.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-t="save"></span></a>
+        <a class="save" href="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/files/Simone_Mazzer.vcf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span data-t="save"></span></a>
       </div>
     </div>
     <div class="office"><span data-t="office"></span> <a href="tel:+390773764832">+39 0773 764832</a> <a href="mailto:info@officinemazzer.it">info@officinemazzer.it</a></div>
@@ -180,7 +202,7 @@ footer img{height:30px;width:auto;margin:6px auto 10px;opacity:.9}
 </main>
 
 <footer>
-  <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@711b49e0b8e2be7d8c4bb32b25c67bcaa9ebe4da/img/logo.svg" alt="Officine Mazzer · Build Together">
+  <img src="https://cdn.jsdelivr.net/gh/simonemazzer-creator/mets@04b8075e6b63891d47e63e5d70683ee7ea691e8e/img/logo.svg" alt="Officine Mazzer · Build Together">
   Officine Mazzer S.r.l. · Via Marco e Marcelliano 45, 00147 Roma (IT)<br>
   P. IVA / VAT IT02960350599
 </footer>
@@ -191,32 +213,32 @@ const T = {
     kicker:'METSTRADE 2026 · Amsterdam', title:'Stainless steel excellence for yachts and superyachts', sub:'Designed, machined and finished in Italy since 1985. Thank you for visiting our stand.',
     b_h:'Company brochure', b_p:'Our story, our workshop and our work on board.', b_go:'Open brochure',
     c_h:'Product catalogue', c_p:'Hinges, cleats, hatches, doors, ladders and custom stainless parts.', c_go:'Browse the catalogue',
-    ct_h:'Contacts', call:'Call', save:'Save contact', office:'Office:', so_h:'Follow us', v_go:'Watch the video', web:'Website'},
+    ct_h:'Contacts', call:'Call', save:'Save contact', office:'Office:', so_h:'Follow us', v_go:'Watch the video', bk_dl:'Download PDF', web:'Website'},
   it: {name:'Italiano',
     kicker:'METSTRADE 2026 · Amsterdam', title:'Eccellenza in acciaio inox per yacht e superyacht', sub:'Progettiamo, lavoriamo e rifiniamo in Italia dal 1985. Grazie per aver visitato il nostro stand.',
     b_h:'Brochure aziendale', b_p:'La nostra storia, la nostra officina e i nostri lavori a bordo.', b_go:'Apri la brochure',
     c_h:'Catalogo prodotti', c_p:'Cerniere, bitte, portelli, porte, scale e componenti inox su misura.', c_go:'Sfoglia il catalogo',
-    ct_h:'Contatti', call:'Chiama', save:'Salva contatto', office:'Ufficio:', so_h:'Seguici', v_go:'Guarda il video', web:'Sito web'},
+    ct_h:'Contatti', call:'Chiama', save:'Salva contatto', office:'Ufficio:', so_h:'Seguici', v_go:'Guarda il video', bk_dl:'Scarica PDF', web:'Sito web'},
   nl: {name:'Nederlands',
     kicker:'METSTRADE 2026 · Amsterdam', title:'Roestvrij staal van topkwaliteit voor jachten en superjachten', sub:'Sinds 1985 ontworpen, bewerkt en afgewerkt in Italië. Bedankt voor uw bezoek aan onze stand.',
     b_h:'Bedrijfsbrochure', b_p:'Ons verhaal, onze werkplaats en ons werk aan boord.', b_go:'Brochure openen',
     c_h:'Productcatalogus', c_p:'Scharnieren, bolders, luiken, deuren, trappen en roestvrijstalen maatwerk.', c_go:'Bekijk de catalogus',
-    ct_h:'Contact', call:'Bellen', save:'Contact opslaan', office:'Kantoor:', so_h:'Volg ons', v_go:'Bekijk de video', web:'Website'},
+    ct_h:'Contact', call:'Bellen', save:'Contact opslaan', office:'Kantoor:', so_h:'Volg ons', v_go:'Bekijk de video', bk_dl:'PDF downloaden', web:'Website'},
   de: {name:'Deutsch',
     kicker:'METSTRADE 2026 · Amsterdam', title:'Edelstahl in Bestform für Yachten und Superyachten', sub:'Seit 1985 in Italien konstruiert, gefertigt und veredelt. Danke für Ihren Besuch an unserem Stand.',
     b_h:'Unternehmensbroschüre', b_p:'Unsere Geschichte, unsere Werkstatt und unsere Arbeit an Bord.', b_go:'Broschüre öffnen',
     c_h:'Produktkatalog', c_p:'Scharniere, Poller, Luken, Türen, Leitern und Edelstahl-Sonderanfertigungen.', c_go:'Katalog ansehen',
-    ct_h:'Kontakt', call:'Anrufen', save:'Kontakt speichern', office:'Büro:', so_h:'Folgen Sie uns', v_go:'Video ansehen', web:'Website'},
+    ct_h:'Kontakt', call:'Anrufen', save:'Kontakt speichern', office:'Büro:', so_h:'Folgen Sie uns', v_go:'Video ansehen', bk_dl:'PDF herunterladen', web:'Website'},
   fr: {name:'Français',
     kicker:'METSTRADE 2026 · Amsterdam', title:'L’excellence de l’inox pour yachts et superyachts', sub:'Conçus, usinés et finis en Italie depuis 1985. Merci de votre visite sur notre stand.',
     b_h:'Brochure de l’entreprise', b_p:'Notre histoire, notre atelier et nos réalisations à bord.', b_go:'Ouvrir la brochure',
     c_h:'Catalogue produits', c_p:'Charnières, taquets, panneaux, portes, échelles et pièces inox sur mesure.', c_go:'Voir le catalogue',
-    ct_h:'Contacts', call:'Appeler', save:'Enregistrer le contact', office:'Bureau :', so_h:'Suivez-nous', v_go:'Voir la vidéo', web:'Site web'},
+    ct_h:'Contacts', call:'Appeler', save:'Enregistrer le contact', office:'Bureau :', so_h:'Suivez-nous', v_go:'Voir la vidéo', bk_dl:'Télécharger le PDF', web:'Site web'},
   es: {name:'Español',
     kicker:'METSTRADE 2026 · Ámsterdam', title:'Excelencia en acero inoxidable para yates y superyates', sub:'Diseñado, mecanizado y acabado en Italia desde 1985. Gracias por visitar nuestro stand.',
     b_h:'Folleto de empresa', b_p:'Nuestra historia, nuestro taller y nuestros trabajos a bordo.', b_go:'Abrir el folleto',
     c_h:'Catálogo de productos', c_p:'Bisagras, cornamusas, escotillas, puertas, escaleras y piezas inox a medida.', c_go:'Ver el catálogo',
-    ct_h:'Contacto', call:'Llamar', save:'Guardar contacto', office:'Oficina:', so_h:'Síguenos', v_go:'Ver el vídeo', web:'Web'}
+    ct_h:'Contacto', call:'Llamar', save:'Guardar contacto', office:'Oficina:', so_h:'Síguenos', v_go:'Ver el vídeo', bk_dl:'Descargar PDF', web:'Web'}
 };
 const ORDER = ['en','nl','de','fr','es','it'];
 const vM=document.getElementById('vModal'), vF=document.getElementById('vFull');
@@ -225,6 +247,35 @@ function closeV(){ vF.pause(); vM.hidden=true; document.body.style.overflow=''; 
 document.getElementById('vClose').addEventListener('click',closeV);
 vM.addEventListener('click',e=>{ if(e.target===vM) closeV(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!vM.hidden) closeV(); });
+const PF_SRC='https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js';
+const BOOK_N=20, bEl=document.getElementById('book'), brA=document.getElementById('brLink');
+let pf=null, pfLang=null, curLang='en';
+function bookBase(){ return (brA.dataset.base||'')+'book/'+(curLang==='it'?'it':'en')+'/p-'; }
+function loadPF(){ return window.St ? Promise.resolve() : new Promise((ok,ko)=>{ const sc=document.createElement('script'); sc.src=PF_SRC; sc.onload=ok; sc.onerror=ko; document.head.appendChild(sc); }); }
+function bookUpd(){ if(!pf) return; const i=pf.getCurrentPageIndex(), n=pf.getPageCount(), two=pf.getOrientation()==='landscape';
+  document.getElementById('bNum').textContent=(two&&i>0&&i<n-1? (i+1)+'–'+Math.min(i+2,n) : (i+1))+' / '+n;
+  document.getElementById('bPrev').disabled=i<=0; document.getElementById('bNext').disabled=i>=n-(two&&i>0?2:1); }
+function buildBook(){
+  const st=document.getElementById('bStage'), W=st.clientWidth-16, H=st.clientHeight-8, R=1599/900;
+  let h=H, w=h/R; const two=W>=w*2+1; if(!two && w>W){ w=W; h=w*R; } if(two && w*2>W){ w=W/2; h=w*R; }
+  const old=document.getElementById('flip'); const nf=document.createElement('div'); nf.id='flip'; if(old) old.replaceWith(nf); else st.appendChild(nf);
+  pf=new St.PageFlip(nf,{width:Math.floor(w),height:Math.floor(h),size:'fixed',showCover:true,usePortrait:true,mobileScrollSupport:false,maxShadowOpacity:.4,flippingTime:700});
+  const pages=[]; for(let i=1;i<=BOOK_N;i++){ const d=document.createElement('div'); d.className='bpage'; if(i===1||i===BOOK_N) d.dataset.density='hard'; const im=document.createElement('img'); im.src=bookBase()+String(i).padStart(2,'0')+'.jpg'; im.alt=''; im.decoding='async'; if(i>4) im.loading='lazy'; d.appendChild(im); nf.appendChild(d); pages.push(d); }
+  pf.loadFromHTML(pages); pfLang=curLang; pf.on('flip',bookUpd); pf.on('changeOrientation',bookUpd); bookUpd();
+  document.getElementById('bLoad').style.display='none';
+}
+function openBook(push){ bEl.hidden=false; document.body.style.overflow='hidden';
+  document.getElementById('bDl').href=brA.href;
+  if(push) history.pushState({book:1},'');
+  loadPF().then(()=>{ if(!pf||pfLang!==curLang) buildBook(); }).catch(()=>{ closeBook(); location.href=brA.href; }); }
+function closeBook(){ bEl.hidden=true; document.body.style.overflow=''; }
+brA.addEventListener('click',e=>{ e.preventDefault(); openBook(true); });
+document.getElementById('bClose').addEventListener('click',()=>{ if(history.state&&history.state.book) history.back(); else closeBook(); });
+window.addEventListener('popstate',()=>{ if(!bEl.hidden) closeBook(); });
+document.getElementById('bPrev').addEventListener('click',()=>pf&&pf.flipPrev());
+document.getElementById('bNext').addEventListener('click',()=>pf&&pf.flipNext());
+document.addEventListener('keydown',e=>{ if(bEl.hidden||!pf) return; if(e.key==='ArrowRight') pf.flipNext(); if(e.key==='ArrowLeft') pf.flipPrev(); if(e.key==='Escape') document.getElementById('bClose').click(); });
+let rsT; window.addEventListener('resize',()=>{ if(bEl.hidden||!pf) return; clearTimeout(rsT); rsT=setTimeout(()=>{ const i=pf.getCurrentPageIndex(); pf.destroy(); buildBook(); pf.turnToPage(i); bookUpd(); },300); });
 function pick() {
   try { const s = localStorage.getItem('om_lang'); if (s && T[s]) return s; } catch (e) {}
   const q = new URLSearchParams(location.search).get('lang'); if (q && T[q]) return q;
@@ -235,7 +286,7 @@ function apply(l) {
   document.querySelectorAll('[data-t]').forEach(el => { el.textContent = d[el.dataset.t]; });
   document.getElementById('langBtn').textContent = l.toUpperCase();
   document.getElementById('catLink').href = l === 'it' ? 'https://www.officinemazzer.it/catalogo-prodotti/' : 'https://www.officinemazzer.it/catalogo-prodotti/';
-  const br=document.getElementById('brLink'); if(br) br.href=br.dataset.base+(l==='it'?'files/Officine-Mazzer-Brochure-IT.pdf':'files/Officine-Mazzer-Brochure.pdf');
+  curLang=l; const br=document.getElementById('brLink'); if(br) br.href=br.dataset.base+(l==='it'?'files/Officine-Mazzer-Brochure-IT.pdf':'files/Officine-Mazzer-Brochure.pdf');
   renderList(l);
 }
 const btn = document.getElementById('langBtn'), list = document.getElementById('langList');
