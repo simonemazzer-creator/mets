@@ -12,6 +12,7 @@ jobs:
         run: |
           KEY="sb_publishable_gUwDeJD8phbZOeaCvq5SWw_BZIaXswW"
           URL="https://qrgkuhmgicmepyoomiij.supabase.co"
-          curl -fsS "$URL/rest/v1/contatti?select=id&limit=1" -H "apikey: $KEY"
-          curl -fsS "$URL/auth/v1/health" -H "apikey: $KEY" -o /dev/null
-          echo " ok"
+          R=$(curl -s -o /dev/null -w "%{http_code}" "$URL/rest/v1/contatti?select=id&limit=1" -H "apikey: $KEY")
+          A=$(curl -s -o /dev/null -w "%{http_code}" "$URL/auth/v1/health" -H "apikey: $KEY")
+          echo "rest=$R auth=$A"
+          [ "$A" = "200" ] && [ "$R" -lt 500 ]
