@@ -12,6 +12,6 @@ jobs:
         run: |
           KEY="sb_publishable_gUwDeJD8phbZOeaCvq5SWw_BZIaXswW"
           URL="https://qrgkuhmgicmepyoomiij.supabase.co"
-          curl -fsS "$URL/rest/v1/contatti?select=id&limit=1" -H "apikey: $KEY" -H "Authorization: Bearer $KEY"
+          curl -fsS "$URL/rest/v1/contatti?select=id&limit=1" -H "apikey: $KEY"
           curl -fsS "$URL/auth/v1/health" -H "apikey: $KEY" -o /dev/null
           echo " ok"
